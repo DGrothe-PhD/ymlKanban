@@ -1,0 +1,21 @@
+xban_config:
+  title: miniboard
+  description: So this is a Kanban board.
+  board_color:
+  - red
+  - teal
+---
+todo:
+- tell a story about myself
+- escape stupid interview questions
+- post about Kanban boards
+- 'commit changes upstream
+
+  and set up a PR'
+- "watch videos \U0001FAE0"
+finished:
+- look at my e-mail
+- "smile \U0001F609"
+- "have dinner \U0001F958"
+- get fresh at the weekend
+- "listen to funny song \u263A"
