@@ -7,7 +7,7 @@
 from xban.style import TILE_STYLE
 
 
-BLACK_SYTLE = """
+BLACK_STYLE = """
 QListView::item {
   background-color: #D9D7D7;
   color: black;
@@ -40,4 +40,4 @@ QListView QTextEdit QScrollBar::handle:vertical {
 
 def test_color_format():
 
-    assert TILE_STYLE["black"] == BLACK_SYTLE
+    assert TILE_STYLE["black"] == BLACK_STYLE
