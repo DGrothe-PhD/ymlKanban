@@ -80,7 +80,7 @@ class BanBoard(QWidget):
 
         add_btn = BanButton(
             "+",
-            clicked=self.insert_board,
+            pressed=self.insert_board,
             toolTip="add board",
             objectName="windowBtn_add",
         )
@@ -216,9 +216,12 @@ class SubBoard(QFrame):
     def __init__(self, tile_contents, color, parent=None):
         super().__init__(parent)
         title_name, tile_items = tile_contents
-        self.color = color
+        # check and remove [], None, etc.
+        if color:
+            self.color = color
+        else:
+            self.color = "black"
         self.setObjectName("subBoardFrame")
-
         shadow = QGraphicsDropShadowEffect(
             self, blurRadius=10, offset=5, color=QColor("lightgrey")
         )
@@ -232,7 +235,7 @@ class SubBoard(QFrame):
         board.addWidget(tile_title)
 
         self.listwidget = BanListWidget(self)
-        self.listwidget.setStyleSheet(TILE_STYLE.get(color, "black"))
+        self.listwidget.setStyleSheet(TILE_STYLE.get(self.color, "black"))
         for tile in tile_items:
             self.listwidget.add_item(tile)
 
